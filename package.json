@@ -1,0 +1,45 @@
+{
+  "name": "csv-homie",
+  "version": "0.1.0",
+  "description": "CSV manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "npx tsc -p tsconfig.build.json",
+    "lint": "npx eslint ."
+  },
+  "keywords": [
+    "csv",
+    "csv-parser",
+    "csv-writer",
+    "csv-stringify"
+  ],
+  "files": [
+    "dist/**"
+  ],
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "author": "denbon05",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "29.5.1",
+    "@types/lodash": "^4.14.195",
+    "@types/node": "18.16.12",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "29.5.0",
+    "prettier": "^2.3.2",
+    "ts-jest": "29.1.0",
+    "ts-node": "^10.0.0",
+    "tsconfig-paths": "4.2.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
