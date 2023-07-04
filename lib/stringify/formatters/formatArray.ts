@@ -1,5 +1,6 @@
 import { chain, zip } from 'lodash';
 import { IOptions } from '../../types/stringify';
+import { normalize } from '../utils';
 
 export default (
   items: Array<any>,
@@ -10,7 +11,7 @@ export default (
   if (Array.isArray(firstRow)) {
     return (
       items
-        .map((item) => item.join(delimiter))
+        .flatMap((row: Array<any>) => row.map(normalize).join(delimiter))
         // remove headers if NOT included
         .slice(headers ? 0 : 1)
         .join('\n')
@@ -36,7 +37,8 @@ export default (
         if (!value) {
           return null;
         }
-        return typeof value === 'string' ? value : JSON.stringify(value);
+
+        return normalize(value);
       });
       return column;
     })

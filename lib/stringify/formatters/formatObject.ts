@@ -1,4 +1,5 @@
 import { IOptions } from '../../types/stringify';
+import { normalize } from '../utils';
 
 export default (
   data: Record<string, any>,
@@ -9,7 +10,7 @@ export default (
     if (!value) {
       return null;
     }
-    return typeof value === 'string' ? value : JSON.stringify(value);
+    return normalize(value);
   });
 
   return headers

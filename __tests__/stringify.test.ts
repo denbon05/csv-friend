@@ -7,10 +7,10 @@ describe('Stringify array', () => {
       {
         data: [
           ['a', 'b', 'c', 'd'],
-          [1, 2, null, 4],
+          [1, '2,3', null, 4],
           [5, 6, 7, 8],
         ],
-        expectedResult: 'a,b,c,d\n1,2,,4\n5,6,7,8',
+        expectedResult: 'a,b,c,d\n1,"2,3",,4\n5,6,7,8',
       },
     ],
     [
@@ -20,8 +20,9 @@ describe('Stringify array', () => {
           { name: 'bob', age: 32 },
           { name: 'alice', age: 21 },
           { name: 'aldo', children: ['bob', 'alice'] },
+          { name: 'h', age: '2,3' },
         ],
-        expectedResult: `name,age,children\nbob,32,\nalice,21,\naldo,,["bob","alice"]`,
+        expectedResult: `name,age,children\nbob,32,\nalice,21,\naldo,,["bob","alice"]\nh,"2,3",`,
       },
     ],
     [
@@ -61,12 +62,12 @@ describe('Stringify object', () => {
     [
       'Custom options',
       {
-        data: { name: 'bob', age: 32, children: ['alice', 'aldo'] },
+        data: { name: 'bob', age: 32, children: ['alice', 'aldo'], h: '2,34' },
         options: {
           headers: false,
           delimiter: '|',
         },
-        expectedResult: 'bob|32|["alice","aldo"]',
+        expectedResult: 'bob|32|["alice","aldo"]|"2,34"',
       },
     ],
   ];

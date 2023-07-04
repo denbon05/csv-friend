@@ -11,7 +11,7 @@ fix: format
 	npx eslint --fix .
 
 test:
-	npm run test
+	clear && npm run test
 
 cover:
 	npm test -- --coverage --coverageProvider=v8
