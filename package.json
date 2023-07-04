@@ -1,8 +1,8 @@
 {
   "name": "csv-homie",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "CSV manager",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "build": "npx tsc -p tsconfig.build.json",
