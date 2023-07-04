@@ -1,5 +1,8 @@
 # CSV manager
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/7e23c145a9b179833d5a/maintainability)](https://codeclimate.com/github/denbon05/csv-homie/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/7e23c145a9b179833d5a/test_coverage)](https://codeclimate.com/github/denbon05/csv-homie/test_coverage)
+
 Friendly manager for CSV.
 
 ## Example
