@@ -1,6 +1,6 @@
 {
   "name": "csv-homie",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "CSV manager",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,7 @@
   "files": [
     "dist/**"
   ],
+  "types": "dist",
   "engines": {
     "node": ">=14.0.0",
     "npm": ">=6.0.0"
