@@ -1,11 +1,12 @@
 import { chain, zip } from 'lodash';
 import { IOptions } from '../../types/stringify';
-import { normalize } from '../utils';
+import Normalizer from '../utils/Normalizer';
 
 export default (
   items: Array<any>,
   { delimiter, headers }: IOptions,
 ): string => {
+  const { normalize } = new Normalizer({ delimiter });
   // figure out the type of the array items
   const [firstRow] = items;
   if (Array.isArray(firstRow)) {

@@ -62,12 +62,12 @@ describe('Stringify object', () => {
     [
       'Custom options',
       {
-        data: { name: 'bob', age: 32, children: ['alice', 'aldo'], h: '2,34' },
+        data: { name: 'bob', age: 32, children: ['alice', 'aldo'], h: '2|34' },
         options: {
           headers: false,
           delimiter: '|',
         },
-        expectedResult: 'bob|32|["alice","aldo"]|"2,34"',
+        expectedResult: 'bob|32|["alice","aldo"]|"2|34"',
       },
     ],
   ];
