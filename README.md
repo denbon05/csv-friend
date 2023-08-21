@@ -38,6 +38,7 @@ stringify(dataCollection, {
 ```ts
 interface IOptions {
   headers: boolean; // true
+  isEmptyIfNullable: boolean; // true
   delimiter: string; // ','
 }
 ```

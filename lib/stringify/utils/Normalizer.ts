@@ -2,13 +2,18 @@ import { IOptions } from '../../types/stringify';
 
 class Normalizer {
   private delimiter: string;
+  private isEmptyIfNullable: boolean;
 
-  constructor({ delimiter }: Pick<IOptions, 'delimiter'>) {
+  constructor({
+    delimiter,
+    isEmptyIfNullable,
+  }: Pick<IOptions, 'delimiter' | 'isEmptyIfNullable'>) {
     this.delimiter = delimiter;
+    this.isEmptyIfNullable = isEmptyIfNullable;
   }
 
   normalize = <T>(value: T): string | T | null => {
-    if (!value) {
+    if (!value && this.isEmptyIfNullable) {
       return null;
     }
 
