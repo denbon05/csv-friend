@@ -30,13 +30,14 @@ describe('Stringify array', () => {
       {
         data: [
           { a: 'b', c: 'd' },
-          { a: 'f', c: 'x' },
+          { a: 'f', c: 0 },
         ],
         options: {
           headers: false,
           delimiter: '|',
+          isEmptyIfNullable: false,
         },
-        expectedResult: 'b|d\nf|x',
+        expectedResult: 'b|d\nf|0',
       },
     ],
   ];
@@ -62,12 +63,13 @@ describe('Stringify object', () => {
     [
       'Custom options',
       {
-        data: { name: 'bob', age: 32, children: ['alice', 'aldo'], h: '2|34' },
+        data: { name: 'bob', age: 0, children: ['alice', 'aldo'], h: '2|34' },
         options: {
           headers: false,
           delimiter: '|',
+          isEmptyIfNullable: false,
         },
-        expectedResult: 'bob|32|["alice","aldo"]|"2|34"',
+        expectedResult: 'bob|0|["alice","aldo"]|"2|34"',
       },
     ],
   ];

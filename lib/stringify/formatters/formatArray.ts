@@ -4,9 +4,9 @@ import Normalizer from '../utils/Normalizer';
 
 export default (
   items: Array<any>,
-  { delimiter, headers }: IOptions,
+  { delimiter, headers, isEmptyIfNullable }: IOptions,
 ): string => {
-  const { normalize } = new Normalizer({ delimiter });
+  const { normalize } = new Normalizer({ delimiter, isEmptyIfNullable });
   // figure out the type of the array items
   const [firstRow] = items;
   if (Array.isArray(firstRow)) {
@@ -35,9 +35,6 @@ export default (
     .map((key) => {
       const column = items.map((item: Record<string, any>) => {
         const value = item[key];
-        if (!value) {
-          return null;
-        }
 
         return normalize(value);
       });

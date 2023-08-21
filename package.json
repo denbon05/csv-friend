@@ -1,10 +1,10 @@
 {
   "name": "csv-homie",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "CSV manager",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "npx jest",
     "build": "npx tsc -p tsconfig.build.json",
     "lint": "npx eslint ."
   },
@@ -19,11 +19,15 @@
   ],
   "types": "dist",
   "engines": {
-    "node": ">=14.0.0",
-    "npm": ">=6.0.0"
+    "node": ">=14.x",
+    "npm": ">=6.x"
   },
   "author": "denbon05",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denbon05/csv-homie.git"
+  },
   "devDependencies": {
     "@types/jest": "29.5.1",
     "@types/lodash": "^4.14.195",

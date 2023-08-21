@@ -4,6 +4,7 @@ import handle from './handler';
 const defaultOptions: IOptions = {
   delimiter: ',',
   headers: true,
+  isEmptyIfNullable: true,
 };
 
 /**
