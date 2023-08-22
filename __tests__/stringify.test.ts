@@ -3,7 +3,7 @@ import { stringify } from 'lib/';
 describe('Stringify array', () => {
   const casesWithResult: Array<[string, Record<string, any>]> = [
     [
-      'Default options - numbers',
+      'Default options - arrays of numbers',
       {
         data: [
           ['a', 'b', 'c', 'd'],
@@ -14,7 +14,7 @@ describe('Stringify array', () => {
       },
     ],
     [
-      'Default options - collection',
+      'Default options, different headers - collection',
       {
         data: [
           { name: 'bob', age: 32 },
@@ -29,15 +29,15 @@ describe('Stringify array', () => {
       'Custom options',
       {
         data: [
-          { a: 'b', c: 'd' },
-          { a: 'f', c: 0 },
+          { a: 'b', c: 'd', x: undefined, y: '' },
+          { a: 'f', c: 0, x: null, y: NaN },
         ],
         options: {
           headers: false,
           delimiter: '|',
           isEmptyIfNullable: false,
         },
-        expectedResult: 'b|d\nf|0',
+        expectedResult: 'b|d||\nf|0|null|null',
       },
     ],
   ];
