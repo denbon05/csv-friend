@@ -20,15 +20,16 @@ stringify(dataArray);
 // 'a,b,c,d\n1,2,,4\n5,6,7,8'
 
 const dataCollection = [
-  { a: 'b', c: 'd' },
-  { a: 'f', c: 'x' },
+  { a: 'b', c: 'd', x: undefined, y: '' },
+  { a: 'f', c: 0, x: null, y: NaN },
 ];
 // custom options - 2th parameter
 stringify(dataCollection, {
   headers: false,
   delimiter: '|',
+  isEmptyIfNullable: false,
 });
-// 'b|d\nf|x'
+// 'b|d||\nf|0|null|null'
 ```
 
 ## API
