@@ -1,3 +1,3 @@
-import stringify from './stringify';
+import { stringify, parse } from './engine';
 
-export { stringify };
+export { parse, stringify };

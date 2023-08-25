@@ -1,13 +1,15 @@
-import { IOptions } from '../types/stringify';
+import { StringifyOptions } from '../types/stringify';
 import formatArray from './formatters/formatArray';
 import formatObject from './formatters/formatObject';
 
 /**
- * Convert array to CSV string.
+ * Convert data to CSV string.
+ * @param {unknown} data
+ * @param {StringifyOptions} options
+ * @returns {string}
  */
-export default <T>(data: T, options: IOptions): string => {
+export default <T>(data: T, options: StringifyOptions): string => {
   // define what formatter will handle the data
-  // in js Array is an object type
   if (Array.isArray(data)) {
     return formatArray(data, options);
   }

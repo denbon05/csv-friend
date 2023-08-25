@@ -1,9 +1,9 @@
-import { IOptions } from '../../types/stringify';
+import { StringifyOptions } from '../../types/stringify';
 import Normalizer from '../utils/Normalizer';
 
 export default (
   data: Record<string, any>,
-  { delimiter, headers, isEmptyIfNullable }: IOptions,
+  { delimiter, headers, isEmptyIfNullable }: StringifyOptions,
 ): string => {
   const { normalize } = new Normalizer({ delimiter, isEmptyIfNullable });
   const keys = Object.keys(data);

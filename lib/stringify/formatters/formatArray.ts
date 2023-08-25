@@ -1,10 +1,10 @@
 import { chain, zip } from 'lodash';
-import { IOptions } from '../../types/stringify';
+import { StringifyOptions } from '../../types/stringify';
 import Normalizer from '../utils/Normalizer';
 
 export default (
   items: Array<any>,
-  { delimiter, headers, isEmptyIfNullable }: IOptions,
+  { delimiter, headers, isEmptyIfNullable }: StringifyOptions,
 ): string => {
   const { normalize } = new Normalizer({ delimiter, isEmptyIfNullable });
   // figure out the type of the array items

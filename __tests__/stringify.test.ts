@@ -3,7 +3,7 @@ import { stringify } from 'lib/';
 describe('Stringify array', () => {
   const casesWithResult: Array<[string, Record<string, any>]> = [
     [
-      'Default options - arrays of numbers',
+      'Default options - arrays of values',
       {
         data: [
           ['a', 'b', 'c', 'd'],

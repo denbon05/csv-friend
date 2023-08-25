@@ -12,7 +12,9 @@
     "csv",
     "csv-parser",
     "csv-writer",
-    "csv-stringify"
+    "csv-stringify",
+    "csv-client",
+    "csv-browser"
   ],
   "files": [
     "dist/**"

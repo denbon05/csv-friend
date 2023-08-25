@@ -1,4 +1,4 @@
-import { IOptions } from '../../types/stringify';
+import { StringifyOptions } from '../../types/stringify';
 
 class Normalizer {
   private delimiter: string;
@@ -7,7 +7,7 @@ class Normalizer {
   constructor({
     delimiter,
     isEmptyIfNullable,
-  }: Pick<IOptions, 'delimiter' | 'isEmptyIfNullable'>) {
+  }: Pick<StringifyOptions, 'delimiter' | 'isEmptyIfNullable'>) {
     this.delimiter = delimiter;
     this.isEmptyIfNullable = isEmptyIfNullable;
   }
