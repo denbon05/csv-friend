@@ -1,6 +1,10 @@
 import parseHandler from './parse/handler';
 import stringifyHandler from './stringify/handler';
-import type { ParseOptions, ParseReturn } from './types/parse';
+import type {
+  ParseDistinctOpts,
+  ParseOptions,
+  ParseReturn,
+} from './types/parse';
 import type { StringifyOptions } from './types/stringify';
 
 // Stringify
@@ -29,14 +33,14 @@ const parseDefaultOpts: ParseOptions = {
   rowType: 'array',
 };
 
-export const parse = <T extends ParseOptions['rowType']>(
+export const parse = <Opts extends ParseDistinctOpts>(
   data: string,
-  customOptions: Partial<ParseOptions> = {},
-): ParseReturn<T> => {
-  const options = {
+  customOptions: Opts,
+): ParseReturn<Opts['rowType']> => {
+  const options: ParseOptions = {
     ...parseDefaultOpts,
     ...customOptions,
   };
 
-  return parseHandler(data, options);
+  return parseHandler(data, options) as any;
 };

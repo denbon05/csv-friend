@@ -1,4 +1,9 @@
-import { ParseOptions } from '../types/parse';
+import type {
+  ParseOptions,
+  ParseReturn,
+  ParseToArrayOpts,
+  ParseToObjectOpts,
+} from '../types/parse';
 import parseToArray from './parsers/parseToArray';
 import parseToObject from './parsers/parseToObject';
 
@@ -8,12 +13,14 @@ import parseToObject from './parsers/parseToObject';
  * @param {ParseOptions} options
  * @returns {unknown}
  */
-export default <T>(data: string, options: ParseOptions): T => {
-  // // define what parser will handle the data
-  // if (options.rowType === 'array') {
-  //   return parseToArray(data, options);
-  // }
-
-  // return parseToObject(data, options);
-  return parseToArray(data, options);
+export default (data: string, { rowType, ...rest }: ParseOptions): unknown => {
+  // define what parser will handle the data
+  switch (rowType) {
+    case 'object':
+      return parseToObject(data, rest);
+    case 'array':
+      return parseToArray(data, rest);
+    default:
+      throw Error(`Unsupported parser type ${rowType}!`);
+  }
 };

@@ -1,4 +1,4 @@
-import { ParseOptions } from 'lib/types/parse';
+import { ParseDistinctOpts } from 'lib/types/parse';
 
 export type ArrayCases = Array<
   [
@@ -6,7 +6,7 @@ export type ArrayCases = Array<
     {
       str: string;
       expectedResult: any;
-      options?: Partial<ParseOptions>;
+      options: ParseDistinctOpts;
     },
   ]
 >;

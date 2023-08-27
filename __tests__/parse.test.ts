@@ -1,7 +1,11 @@
 import { parse } from 'lib/';
 import { ArrayCases } from './types/parse';
+import { ParseDistinctOpts } from 'lib/types/parse';
 
 describe('Parse to array', () => {
+  const arrOpts: ParseDistinctOpts = {
+    rowType: 'array',
+  };
   const casesWithResults: ArrayCases = [
     [
       'Default options - simple string',
@@ -12,6 +16,7 @@ describe('Parse to array', () => {
           [1, '2,3', null, 4],
           [5, 6, 7, 8],
         ],
+        options: arrOpts,
       },
     ],
   ];
