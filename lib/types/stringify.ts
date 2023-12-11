@@ -3,3 +3,5 @@ export interface IOptions {
   delimiter: string;
   isEmptyIfNullable: boolean;
 }
+
+export type CSVHomieOpts = Partial<IOptions>;
