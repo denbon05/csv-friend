@@ -1,4 +1,4 @@
-import { IOptions } from '../types/stringify';
+import { IOptions } from '../types';
 import formatArray from './formatters/formatArray';
 import formatObject from './formatters/formatObject';
 
