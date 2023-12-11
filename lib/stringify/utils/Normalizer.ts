@@ -1,4 +1,4 @@
-import { IOptions } from '../../types/stringify';
+import { IOptions } from '../../types';
 
 class Normalizer {
   private delimiter: string;

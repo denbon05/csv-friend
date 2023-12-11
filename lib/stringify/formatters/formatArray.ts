@@ -1,5 +1,5 @@
 import { chain, zip } from 'lodash';
-import { IOptions } from '../../types/stringify';
+import { IOptions } from '../../types';
 import Normalizer from '../utils/Normalizer';
 
 export default (

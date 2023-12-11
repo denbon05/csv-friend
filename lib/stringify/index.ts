@@ -1,4 +1,4 @@
-import type { CSVHomieOpts, IOptions } from '../types/stringify';
+import type { CSVHomieOpts, IOptions } from '../types';
 import handle from './handler';
 
 const defaultOptions: IOptions = {
