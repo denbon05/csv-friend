@@ -40,6 +40,17 @@ describe('Stringify array', () => {
         expectedResult: 'b|d||\nf|0|null|null',
       },
     ],
+    [
+      'One line without headers',
+      {
+        data: [{ a: 'b', c: 'd', x: undefined, y: '' }],
+        options: {
+          headers: false,
+          delimiter: '|',
+        },
+        expectedResult: 'b|d||',
+      },
+    ],
   ];
 
   test.each(casesWithResult)(

@@ -1,6 +1,6 @@
 {
   "name": "csv-homie",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "CSV manager",
   "main": "dist/index.js",
   "scripts": {
@@ -29,6 +29,14 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/denbon05/csv-homie.git"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
   },
   "devDependencies": {
     "@types/jest": "29.5.1",
